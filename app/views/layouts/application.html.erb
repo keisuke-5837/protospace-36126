@@ -24,7 +24,7 @@
                <%= link_to "#{current_user.name}", root_path, class: :greeting__link%>
               </div> 
               <div class="nav__right">
-                 <%= link_to "ログアウト",  destroy_user_session_path, class: :nav__logout %>
+                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
                  <%= link_to "New Proto", root_path, class: :nav__btn %>
                </div>
           <% else %>
