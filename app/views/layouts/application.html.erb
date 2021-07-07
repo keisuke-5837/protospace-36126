@@ -25,7 +25,7 @@
               </div> 
               <div class="nav__right">
                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-                 <%= link_to "New Proto", root_path, class: :nav__btn %>
+                 <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
                </div>
           <% else %>
           <%# // ログインしているときは上記を表示するようにしましょう %>
