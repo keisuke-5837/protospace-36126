@@ -32,11 +32,10 @@
       </div>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <%# <% if user_signed_in? %>
-        <% if user_signed_in? && current_user.id == @prototype.user_id %>
+        <% if user_signed_in? %>
           <%= form_with model: [@prototype, @comment],local: true do |f|%>
             <div class="field">
-              <%= f.label :text, "コメント" %><br />
+              <%= f.label :text, "#{@comment.text}" %><br />
               <%= f.text_field :text, id:"comment_text" %>
             </div>
             <div class="actions">
