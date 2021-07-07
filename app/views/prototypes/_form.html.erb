@@ -17,7 +17,6 @@
   <div class="field">
     <%= f.label :image, "プロトタイプの画像" %><br />
     <%= f.file_field :image, id:"prototype_image" %>
-    <%= image_tag prototype.image, class: 'prototype_image' if prototype.image.attached? %>
   </div>
 
   <div class="actions">
