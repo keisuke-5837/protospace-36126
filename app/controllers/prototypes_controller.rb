@@ -1,5 +1,4 @@
 class PrototypesController < ApplicationController
-  #before_action :authenticate_user! only: [:index, :show]
   before_action :set_prototype, only: [:edit, :show]
 
   def index
@@ -7,12 +6,10 @@ class PrototypesController < ApplicationController
   end
 
   def new
-    redirect_to root_path unless current_user.id == @buy_item.user_id
     @prototype = Prototype.new
   end
 
   def create
-    #binding.pry
     @prototype = Prototype.new(prototype_params)
     if @prototype.save
       redirect_to root_path(@prototype)
@@ -27,7 +24,6 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless current_user == @buy_item.user_id
   end
 
   def update
@@ -41,7 +37,6 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    redirect_to root_path unless current_user == @buy_item.user_id
     @prototype = Prototype.find(params[:id])
     @prototype.destroy
     render :index
