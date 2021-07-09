@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    @prototype = Prototype.find(params[:id])
     @comment = Comment.create(comment_params)
     redirect_to "/prototypes/#{@comment.prototype.id}"
   end
